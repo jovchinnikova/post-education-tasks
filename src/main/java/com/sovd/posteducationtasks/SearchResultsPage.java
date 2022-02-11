@@ -20,6 +20,7 @@ public class SearchResultsPage {
     public SearchResultsPage(WebDriver driver,String url){
         this.driver = driver;
         driver.get(url);
+        driver.manage().window().fullscreen();
         PageFactory.initElements(driver,this);
     }
 

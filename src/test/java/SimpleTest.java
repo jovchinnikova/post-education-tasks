@@ -9,11 +9,12 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
-public class SearchTest {
+public class SimpleTest {
 
     private WebDriver driver;
     private ConfigReader configReader;
     private final String searchText = "джинсы";
+    private final String location = "Москва";
     private HomePage homePage;
 
     @BeforeTest
@@ -43,6 +44,13 @@ public class SearchTest {
         titles.stream()
                         .forEach(title -> softAssert.assertTrue(title.contains(searchText)));
         softAssert.assertAll();
+    }
+
+    @Test
+    public void chooseLocationTest(){
+        homePage = new HomePage(driver);
+        homePage.openHomePage();
+        homePage.chooseLocation(location);
     }
 
     @AfterTest
