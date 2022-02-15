@@ -26,6 +26,9 @@ public class MyAbstractPage extends AbstractPage {
     @FindBy(css = "[placeholder=\"Искать на Ozon\"]")
     private WebElement searchBar;
 
+    @FindBy(css = "a[data-widget=\"headerIcon\"]")
+    private ExtendedWebElement cartIcon;
+
     @FindBy(css = "form[action=\"/search\"]>button")
     private ExtendedWebElement searchButton;
 
@@ -59,6 +62,11 @@ public class MyAbstractPage extends AbstractPage {
         } else throw new RuntimeException("No results for your location");
     }
 
+    public Cart goToCart(){
+        cartIcon.click();
+        return new Cart(getDriver());
+    }
+
     public WebElement getSearchBar() {
         return searchBar;
     }
@@ -73,5 +81,9 @@ public class MyAbstractPage extends AbstractPage {
 
     public By getInputText() {
         return inputText;
+    }
+
+    public ExtendedWebElement getCartIcon() {
+        return cartIcon;
     }
 }

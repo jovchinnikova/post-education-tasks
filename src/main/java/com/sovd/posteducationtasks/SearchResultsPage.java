@@ -1,6 +1,5 @@
 package com.sovd.posteducationtasks;
 
-import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +14,7 @@ public class SearchResultsPage extends MyAbstractPage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MyAbstractPage.class);
 
-    private final String prodTitle = "Джинсы RoxyFoxy";
+    private final String prodTitle = "Джинсы ТВОЕ";
 
     @FindBy(css = "div[class=\"ih7 hi8\"]")
     private List<ProductBlock> productBlocks;
